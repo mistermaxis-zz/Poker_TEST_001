@@ -36,7 +36,7 @@ class Dealer {
 public:
 	void Deal(Dealable& d)
 	{
-		srand(time(nullptr));
+		srand((unsigned int)time(nullptr));
 		Card card_;
 		card_.card = rand() % 52;
 		d.Deal(card_);
