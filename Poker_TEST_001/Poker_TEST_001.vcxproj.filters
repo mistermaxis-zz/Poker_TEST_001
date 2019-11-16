@@ -18,6 +18,21 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Card.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dealer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IDealable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
