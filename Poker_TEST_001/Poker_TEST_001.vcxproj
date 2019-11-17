@@ -101,6 +101,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Card.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="IDealer.h" />
     <ClInclude Include="IDealable.h" />
     <ClInclude Include="pch.h" />
