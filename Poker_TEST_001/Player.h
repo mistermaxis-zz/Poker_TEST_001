@@ -1,6 +1,10 @@
 #pragma once
 #include "IDealable.h"
 
-class Player : public Dealable {
+class IPlayer : public Dealable {
+
+};
+
+class PokerPlayer : public IPlayer {
 
 };

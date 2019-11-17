@@ -1,5 +1,6 @@
 #pragma once
 #include "IDealable.h"
+#include <iostream>
 #include <cstdlib>
 #include <ctime>
 
@@ -14,7 +15,7 @@ class Dealer : public IDealer {
 private:
 	std::vector<uint8_t> Deck;
 public:
-	Dealer() { Deck.assign(CARD_SIZE, 0); }
+	Dealer() { Deck.assign(CARD_SIZE, 0); std::cout << "Dealer Constructor Called"; }
 	
 	virtual void Deal(Dealable& d)
 	{
