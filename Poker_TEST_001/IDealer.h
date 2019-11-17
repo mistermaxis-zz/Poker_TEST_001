@@ -15,7 +15,7 @@ class Dealer : public IDealer {
 private:
 	std::vector<uint8_t> Deck;
 public:
-	Dealer() { Deck.assign(CARD_SIZE, 0); std::cout << "Dealer Constructor Called"; }
+	Dealer() { Deck.assign(CARD_SIZE, 0); std::cout << "Dealer Constructor Called\n"; }
 	
 	virtual void Deal(Dealable& d)
 	{
