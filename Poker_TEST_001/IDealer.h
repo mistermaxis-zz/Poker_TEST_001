@@ -3,9 +3,14 @@
 #include <cstdlib>
 #include <ctime>
 
-class Dealer {
+class IDealer {
+	public:
+	virtual void Deal(Dealable& d) = 0;
+};
+
+class Dealer : public IDealer {
 public:
-	void Deal(Dealable& d)
+	virtual void Deal(Dealable& d)
 	{
 		srand((unsigned int)time(nullptr));
 		Card card_;

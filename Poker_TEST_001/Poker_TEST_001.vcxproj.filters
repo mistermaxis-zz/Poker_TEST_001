@@ -27,10 +27,10 @@
     <ClInclude Include="Table.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Dealer.h">
+    <ClInclude Include="IDealable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IDealable.h">
+    <ClInclude Include="IDealer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

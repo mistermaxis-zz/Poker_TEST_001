@@ -2,6 +2,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Dealer.h"
+#include "IDealer.h"
 #include "Player.h"
 #include "Table.h"
