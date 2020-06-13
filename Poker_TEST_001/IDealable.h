@@ -1,4 +1,5 @@
 #pragma once
+#include<set>
 #include "Card.h"
 
 class IDealable {
@@ -8,8 +9,10 @@ public:
 
 class Dealable : public IDealable {
 private:
-	Card m_card;
+	std::vector<Card> Hand;
+protected:
+	Dealable() {}
 public:
-	virtual void Deal(Card c) { m_card.card = c.card; }
-	Card showCard() { return m_card; }
+	virtual void Deal(Card c) { Hand.push_back(c); }
+	std::vector<Card> showCards() { return Hand; }
 };

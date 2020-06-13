@@ -1,32 +1,23 @@
 #pragma once
-#include "IDealable.h"
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-
-constexpr size_t CARD_SIZE = 52;
+#include "Deck.h"
 
 class IDealer {
 	public:
 	virtual void Deal(Dealable& d) = 0;
+	virtual ~IDealer() {};
 };
 
-class Dealer : public IDealer {
+class PokerDealer : public IDealer {
 private:
-	std::vector<uint8_t> Deck;
+	Deck deck;
 public:
-	Dealer() { Deck.assign(CARD_SIZE, 0); std::cout << "Dealer Constructor Called\n"; }
+	PokerDealer() { std::cout << "Dealer Constructor Called\n"; }
 	
 	virtual void Deal(Dealable& d)
 	{
-		srand((unsigned int)time(nullptr));
-		Card card_;
-		
-		do
-		{
-			card_.card = rand() % CARD_SIZE;
-		} while (Deck[card_.card] == 1);
-		Deck[card_.card] = 1;
-		d.Deal(card_);
+		Card card = deck.GetCard();
+
+		d.Deal(card);
 	}
 };
