@@ -8,6 +8,7 @@ public:
 	SuitType(unsigned value, std::string name) { CardSuit = std::make_pair(value, name); }
 	unsigned getSuitNumber() { return CardSuit.first; }
 	std::string getSuitName() { return CardSuit.second; }
+	unsigned operator+ (unsigned & i) { return CardSuit.first + i; }
 };
 
 class NumberType {
@@ -19,6 +20,7 @@ public:
 	unsigned getValueNumber() { return CardNumber.first; }
 	std::string getValueName() { return CardNumber.second; }
 	unsigned operator+(SuitType& s) { return CardNumber.first + s.getSuitNumber(); }
+	unsigned operator*(SuitType& s) { return CardNumber.first* s.getSuitNumber(); }
 };
 
 class Card {
@@ -28,7 +30,7 @@ private:
 	SuitType Suit;
 public:
 	Card() {}
-	Card(NumberType value, SuitType suit) : Number(value), Suit(suit), cardID(value + suit) { }
+	Card(unsigned id, NumberType value, SuitType suit) : cardID(id), Number(value), Suit(suit) { }
 	NumberType GetNumber() { return Number; }
 	SuitType GetSuit() { return Suit; }
 	unsigned GetID() { return cardID; }

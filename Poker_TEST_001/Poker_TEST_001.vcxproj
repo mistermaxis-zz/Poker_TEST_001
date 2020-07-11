@@ -104,6 +104,8 @@
     <ClInclude Include="Card.h" />
     <ClInclude Include="Deck.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="HandType.h" />
+    <ClInclude Include="IPayable.h" />
     <ClInclude Include="IDealer.h" />
     <ClInclude Include="IDealable.h" />
     <ClInclude Include="pch.h" />

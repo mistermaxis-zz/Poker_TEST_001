@@ -8,6 +8,13 @@ int main()
 	std::unique_ptr<IDealer> dealer1(new PokerDealer);
 
 	dealer1->Deal(table1);
+	dealer1->Deal(table1);
+	dealer1->Deal(table1);
+	dealer1->Deal(table1);
+	dealer1->Deal(table1);
+	dealer1->Deal(table1);
+	dealer1->Deal(table1);
+	dealer1->Deal(table1);
 	dealer1->Deal(players[0]);
 	dealer1->Deal(players[1]);
 

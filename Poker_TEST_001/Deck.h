@@ -28,8 +28,8 @@ class Deck
 			{
 				value_ = rand() % VALUES;
 				suit_ = rand() % SUITS;
-				id_ = value_ * suit_;
-			}while (deck[id_] == true && deck.size() <= 52);
+				id_ = suit_ * VALUES + value_;
+			}while (deck[id_] == true);
 
 			deck[id_] = true;
 
@@ -95,7 +95,7 @@ class Deck
 				break;
 			}
 
-			Card card(NumberType(value_, value_string), SuitType(suit_, suit_string));
+			Card card(id_, NumberType(value_, value_string), SuitType(suit_, suit_string));
 
 			return card;
 		}
