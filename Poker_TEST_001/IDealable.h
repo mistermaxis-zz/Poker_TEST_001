@@ -1,6 +1,6 @@
 #pragma once
-#include<set>
 #include "Card.h"
+#include <crtdbg.h>
 
 class IDealable {
 public:
@@ -13,6 +13,6 @@ private:
 protected:
 	Dealable() {}
 public:
-	virtual void Deal(Card c) { Hand.push_back(c); }
-	std::vector<Card> showCards() { return Hand; }
+	virtual void Deal(const Card c) { Hand.emplace_back(c); }
+	std::vector<Card> showCards() const { return Hand; }
 };

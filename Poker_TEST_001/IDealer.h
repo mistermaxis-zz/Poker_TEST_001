@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Deck.h"
+#include <crtdbg.h>
 
 class IDealer {
 	public:
@@ -12,12 +13,11 @@ class PokerDealer : public IDealer {
 private:
 	Deck deck;
 public:
-	PokerDealer() { std::cout << "Dealer Constructor Called\n"; }
+	PokerDealer() { std::cout << "PokerDealer Constructor Called\n"; }
+	~PokerDealer() { std::cout << "PokerDealer Destructor Called\n"; }
 	
-	virtual void Deal(Dealable& d)
+	virtual void Deal(Dealable& dealable)
 	{
-		Card card = deck.GetCard();
-
-		d.Deal(card);
+		dealable.Deal(deck.GetCard());
 	}
 };

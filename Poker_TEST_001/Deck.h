@@ -1,21 +1,24 @@
 #pragma once
 #include <iostream>
-#include <cstdlib>
 #include <ctime>
 #include <vector>
 #include "Card.h"
 #include "IDealable.h"
+#include <crtdbg.h>
 
 constexpr size_t SUITS = 4;
 constexpr size_t VALUES = 13;
+constexpr size_t DECK_SIZE = 52;
 
 class Deck
-{	private:
+{	
+	private:
 		std::vector<bool> deck;
 	public:
-		Deck() { deck.assign( 52, false); std::cout << "Deck Constructor Called\n"; }
-
-		Card GetCard()
+		Deck() { deck.assign( DECK_SIZE, false); std::cout << "Deck Constructor called\n"; }
+		~Deck() { std::cout << "Deck Destructor called\n"; }
+		
+		const Card GetCard()
 		{
 			srand((unsigned int)time(nullptr));
 			unsigned long value_;

@@ -1,13 +1,18 @@
 #pragma once
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#define new DEBUG_NEW
 
 class SuitType {
 private:
 	std::pair<unsigned, std::string> CardSuit;
 public:
 	SuitType() { }
+	~SuitType() { }
 	SuitType(unsigned value, std::string name) { CardSuit = std::make_pair(value, name); }
-	unsigned getSuitNumber() { return CardSuit.first; }
-	std::string getSuitName() { return CardSuit.second; }
+	const unsigned getSuitNumber() { return CardSuit.first; }
+	const std::string getSuitName() { return CardSuit.second; }
 	unsigned operator+ (unsigned & i) { return CardSuit.first + i; }
 };
 
@@ -16,21 +21,23 @@ private:
 	std::pair<unsigned, std::string> CardNumber;
 public:
 	NumberType() { }
-	NumberType(unsigned value, std::string name) { CardNumber = std::make_pair(value, name); }
-	unsigned getValueNumber() { return CardNumber.first; }
-	std::string getValueName() { return CardNumber.second; }
+	~NumberType() { }
+	NumberType(const unsigned value, const std::string name) { CardNumber = std::make_pair(value, name); }
+	const unsigned getValueNumber() { return CardNumber.first; }
+	const std::string getValueName() { return CardNumber.second; }
 	unsigned operator+(SuitType& s) { return CardNumber.first + s.getSuitNumber(); }
-	unsigned operator*(SuitType& s) { return CardNumber.first* s.getSuitNumber(); }
+	unsigned operator*(SuitType& s) { return CardNumber.first * s.getSuitNumber(); }
 };
 
 class Card {
 private:
-	unsigned int cardID = 0;
+	const unsigned int cardID = 0;
 	NumberType Number;
 	SuitType Suit;
 public:
-	Card() {}
-	Card(unsigned id, NumberType value, SuitType suit) : cardID(id), Number(value), Suit(suit) { }
+	Card() { std::cout << "Card Constructor called\n"; }
+	~Card() { std::cout << "Card Destructor called\n"; }
+	Card(const unsigned id, const NumberType value, const SuitType suit) : cardID(id), Number(value), Suit(suit) { }
 	NumberType GetNumber() { return Number; }
 	SuitType GetSuit() { return Suit; }
 	unsigned GetID() { return cardID; }

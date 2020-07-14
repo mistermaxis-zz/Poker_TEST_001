@@ -1,5 +1,6 @@
 #pragma once
 #include "IDealable.h"
+#include <crtdbg.h>
 
 class IPlayer : public Dealable, public Payable {
 	//std::vector<Card> Hand;
@@ -8,5 +9,6 @@ class IPlayer : public Dealable, public Payable {
 
 class PokerPlayer : public IPlayer {
 public:
-	PokerPlayer() { }
+	PokerPlayer() { std::cout << "PokerPlayer Constructor called\n"; }
+	~PokerPlayer() { std::cout << "PokerPlayer Destructor called\n"; }
 };

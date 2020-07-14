@@ -17,7 +17,9 @@ private:
 	void DealRiver();
 	void CompareCards();
 public:
-	Game() { pokerDealer = std::unique_ptr<PokerDealer>(new PokerDealer); }
+	Game() { pokerDealer = std::unique_ptr<PokerDealer>(new PokerDealer); std::cout << "Game Constructor called\n"; }
+	~Game() { std::cout << "Game Destructor called\n"; }
+
 	void Start();
 
 };
