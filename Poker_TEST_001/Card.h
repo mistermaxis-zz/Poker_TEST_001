@@ -1,6 +1,7 @@
 #pragma once
 #define _CRTDBG_MAP_ALLOC
 #include <crtdbg.h>
+#include "HandType.h"
 #define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #define new DEBUG_NEW
 
@@ -35,8 +36,8 @@ private:
 	NumberType Number;
 	SuitType Suit;
 public:
-	Card() { std::cout << "Card Constructor called\n"; }
-	~Card() { std::cout << "Card Destructor called\n"; }
+	Card() { }
+	~Card() { }
 	Card(const unsigned id, const NumberType value, const SuitType suit) : cardID(id), Number(value), Suit(suit) { }
 	NumberType GetNumber() { return Number; }
 	SuitType GetSuit() { return Suit; }

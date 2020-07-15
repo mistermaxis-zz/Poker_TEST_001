@@ -6,46 +6,30 @@
 int main()
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	Table table1;
-	std::vector<PokerPlayer> players;
-	PokerPlayer p1, p2;
-	players.emplace_back(p1);
-	players.emplace_back(p2);
+	
+	Game pokerGame;
 
-	PokerDealer samJohnson;
-	//Game texasHoldEm;
+	pokerGame.AddPlayer("John");
+	pokerGame.AddPlayer("George");
+	pokerGame.AddPlayer("Julio");
+	
+	pokerGame.DealPocketCards();
 
-	samJohnson.Deal(table1);
-	samJohnson.Deal(table1);
-	samJohnson.Deal(table1);
-	samJohnson.Deal(table1);
-	samJohnson.Deal(table1);
-	samJohnson.Deal(table1);
-	samJohnson.Deal(table1);
-	samJohnson.Deal(table1);
-	samJohnson.Deal(players[0]);
-	samJohnson.Deal(players[1]);
+	//TODO Take Bets
+	
+	pokerGame.DealFlop();
 
-	auto cards = table1.showCards();
+	//TODO Take Bets
 
-	for (auto card : cards)
-	{
-		std::cout << card.GetID() << "\n" << card.GetNumber().getValueName() << " of " << card.GetSuit().getSuitName() << "\n";
-	}
+	pokerGame.DealTurn();
+	
+	//TODO Take Bets
 
-	cards = players[0].showCards();
+	pokerGame.DealRiver();
 
-	for (auto cards : cards)
-	{
-		std::cout << cards.GetID() << "\n" << cards.GetNumber().getValueName() << " of " << cards.GetSuit().getSuitName() << "\n";
-	}
+	//TODO Take Bets
 
-	cards = players[1].showCards();
-
-	for (auto cards : cards)
-	{
-		std::cout << cards.GetID() << "\n" << cards.GetNumber().getValueName() << " of " << cards.GetSuit().getSuitName() << "\n";
-	}
+	pokerGame.ShowPlayersHands();
 
 	return 0;
 }

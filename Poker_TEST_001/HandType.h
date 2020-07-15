@@ -3,3 +3,7 @@
 class HandType {
 
 };
+
+class Hand {
+
+};

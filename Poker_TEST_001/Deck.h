@@ -15,8 +15,8 @@ class Deck
 	private:
 		std::vector<bool> deck;
 	public:
-		Deck() { deck.assign( DECK_SIZE, false); std::cout << "Deck Constructor called\n"; }
-		~Deck() { std::cout << "Deck Destructor called\n"; }
+		Deck() { deck.assign( DECK_SIZE, false); }
+		~Deck() { }
 		
 		const Card GetCard()
 		{
